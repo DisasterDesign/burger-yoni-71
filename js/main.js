@@ -64,26 +64,6 @@
     }, { passive: true });
   }
 
-  // === Hero Word-by-Word Reveal ===
-  if (!prefersReducedMotion) {
-    var heroQuote = document.querySelector('.hero-quote');
-    if (heroQuote && !heroQuote.querySelector('.word')) {
-      var text = heroQuote.textContent.trim();
-      var words = text.split(/\s+/);
-      heroQuote.textContent = '';
-      heroQuote.style.opacity = '1';
-      words.forEach(function (word, i) {
-        var span = document.createElement('span');
-        span.className = 'word';
-        span.textContent = word;
-        span.style.animationDelay = (0.6 + i * 0.08) + 's';
-        heroQuote.appendChild(span);
-        if (i < words.length - 1) {
-          heroQuote.appendChild(document.createTextNode(' '));
-        }
-      });
-    }
-  }
 
   // === Active nav link on scroll (Intersection Observer) ===
   var sections = document.querySelectorAll('section[id]');
